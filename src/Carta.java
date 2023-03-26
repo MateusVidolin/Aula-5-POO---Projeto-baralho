@@ -19,7 +19,7 @@ public class Carta {
         this.valor = valor;
     }
 
-   @Override
+  @Override
     public String toString() {
         return "Carta{" +
                 "valor= " + valor + " de " + naipe +
