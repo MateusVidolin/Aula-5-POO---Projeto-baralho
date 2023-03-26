@@ -3,5 +3,6 @@ public class GerenciarJogo {
         Baralho baralho = new Baralho();
         baralho.montar();
         baralho.embaralhar();
+        baralho.vinteUm();
     }
 }
