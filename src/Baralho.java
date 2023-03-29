@@ -1,9 +1,11 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Baralho {
+   public Baralho(){
+        montar();
+        embaralhar();
+        vinteUm();
+    }
     Random numeroAleatorio = new Random();
     private List<Carta> cartas = new ArrayList();
 
@@ -22,14 +24,7 @@ public class Baralho {
     }
 
     public void embaralhar() {
-        Carta auxTrocaCartas = null;
-        int posTroca = 0;
-        for (int i = 0; i < 52; i++) {
-            auxTrocaCartas = cartas.get(i);
-            posTroca = numeroAleatorio.nextInt(52);
-            cartas.set(i, cartas.get(posTroca));
-            cartas.set(posTroca, auxTrocaCartas);
-        }
+        Collections.shuffle(cartas);
         System.out.println("\n\n ***Baralho Embaralhado*** ");
         exibir();
     }
@@ -55,19 +50,20 @@ public class Baralho {
             System.out.println(" Computador: " + pontosAcumuladosComputdor);
             System.out.println(" Para comprar uma carta digite C, para parar digite P: ");
             opcao = sc.nextLine();
+            opcao = opcao.toUpperCase();
             if (opcao.equals("C")) {
                 cartaAtual = cartas.get(numeroAleatorio.nextInt(52));
                 teste = String.valueOf(cartaAtual.getValor());
                 pontosAcumuladosJogador += verificaValor(teste);
                 if (pontosAcumuladosJogador > 21) {
-                    System.out.println(" Perdeu!!!, o total de pontos acumulados foi: " + pontosAcumuladosJogador);
+                    System.out.println(" Perdeu!!!, o total de pontos acumulados do computador: " + pontosAcumuladosComputdor + " Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
                     break;
                 } else if (pontosAcumuladosComputdor <= pontosAcumuladosJogador) {
                     cartaAtual = cartas.get(numeroAleatorio.nextInt(52));
                     teste = String.valueOf(cartaAtual.getValor());
                     pontosAcumuladosComputdor += verificaValor(teste);
                     if (pontosAcumuladosComputdor > 21) {
-                        System.out.println(" Voce ganhou!!!, o total de pontos acumulados do computador foi: " + pontosAcumuladosComputdor);
+                        System.out.println(" Voce ganhou!!!, o total de pontos acumulados do computador: " + pontosAcumuladosComputdor + " Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
                         break;
                     }
                 } else {
@@ -76,17 +72,42 @@ public class Baralho {
                         teste = String.valueOf(cartaAtual.getValor());
                         pontosAcumuladosComputdor += verificaValor(teste);
                         if (pontosAcumuladosComputdor > 21) {
-                            System.out.println(" Voce ganhou!!!, o total de pontos acumulados do computador foi: " + pontosAcumuladosComputdor);
+                            System.out.println(" Voce ganhou!!!, o total de pontos acumulados do computador foi: " + pontosAcumuladosComputdor + " Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
                             break;
                         } else if (pontosAcumuladosComputdor > pontosAcumuladosJogador) {
-                            System.out.println(" Voce perdeu!!!, o total de pontos acumulados do computador: " + pontosAcumuladosComputdor + "Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
+                            System.out.println(" Voce perdeu!!!, o total de pontos acumulados do computador: " + pontosAcumuladosComputdor + " Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
+                            break;
                         } else {
-                            System.out.println(" Empate!!!, o total de pontos acumulados do computador: " + pontosAcumuladosComputdor + "Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
+                            System.out.println(" Empate!!!, o total de pontos acumulados do computador: " + pontosAcumuladosComputdor + " Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
+                            break;
                         }
                     }
                 }
 
+            }else{
+                if (pontosAcumuladosComputdor < pontosAcumuladosJogador) {
+                    cartaAtual = cartas.get(numeroAleatorio.nextInt(52));
+                    teste = String.valueOf(cartaAtual.getValor());
+                    pontosAcumuladosComputdor += verificaValor(teste);
+                    if (pontosAcumuladosComputdor > 21) {
+                        System.out.println(" Voce ganhou!!!, o total de pontos acumulados do computador foi: " + pontosAcumuladosComputdor);
+                        break;
+                    } else if (pontosAcumuladosComputdor > pontosAcumuladosJogador) {
+                        System.out.println(" Voce perdeu!!!, o total de pontos acumulados do computador: " + pontosAcumuladosComputdor + " Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
+                        break;
+                    }else if (pontosAcumuladosComputdor < pontosAcumuladosJogador) {
+                        System.out.println(" Voce perdeu!!!, o total de pontos acumulados do computador: " + pontosAcumuladosComputdor + " Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
+                        break;
+                    }
+                    else {
+                        System.out.println(" Empate!!!, o total de pontos acumulados do computador: " + pontosAcumuladosComputdor + " Total de pontos acumulados do jogador: " + pontosAcumuladosJogador);
+                        break;
+                    }
+                }
+
             }
+
+
         }
     }
 

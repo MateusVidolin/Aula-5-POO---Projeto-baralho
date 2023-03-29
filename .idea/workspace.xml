@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="371925a4-a56d-4446-a0ca-ac5f015ae179" name="Changes" comment="versão 1.1 - Corrijido função de montar o baralho e adicionado a função de embaralhar">
+    <list default="true" id="371925a4-a56d-4446-a0ca-ac5f015ae179" name="Changes" comment="versão 1.2 - Adicionado função do jogo vinte e um">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Baralho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baralho.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GerenciarJogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciarJogo.java" afterDir="false" />
@@ -24,6 +24,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,7 +73,8 @@
       <option name="presentableId" value="Default" />
       <updated>1679830833451</updated>
       <workItem from="1679830834862" duration="4395000" />
-      <workItem from="1679850591445" duration="17513000" />
+      <workItem from="1679850591445" duration="17759000" />
+      <workItem from="1680046057889" duration="2454000" />
     </task>
     <task id="LOCAL-00001" summary="versão 1.0">
       <created>1679861975575</created>
@@ -86,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679865708800</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="versão 1.2 - Adicionado função do jogo vinte e um">
+      <created>1679868503554</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679868503554</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +106,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="versão 1.0" />
     <MESSAGE value="versão 1.1 - Corrijido função de montar o baralho e adicionado a função de embaralhar" />
-    <option name="LAST_COMMIT_MESSAGE" value="versão 1.1 - Corrijido função de montar o baralho e adicionado a função de embaralhar" />
+    <MESSAGE value="versão 1.2 - Adicionado função do jogo vinte e um" />
+    <option name="LAST_COMMIT_MESSAGE" value="versão 1.2 - Adicionado função do jogo vinte e um" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Baralho.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
